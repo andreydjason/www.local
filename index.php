@@ -88,36 +88,33 @@ if ($personalProjectContents == '') {
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li class="active"><a href="#">Painel</a></li>
+                <li class="active"><a href="#">Projetos</a></li>
               </ul>
             </div>
           </div>
         </div><!-- /.navbar -->
       </div>
 
-      <div class="jumbotron">
-        <h2>Projetos</h2>
-        <div class="row">
-          <div class="span4">
-            <h3>Trabalho</h3>
-            <ul class="unstyled">
-              <?php echo $workProjectContents ?>
-            </ul>
-          </div>
+      <div class="row">
+        <div class="span4">
+          <h3>Trabalho</h3>
+          <ul class="unstyled">
+            <?php echo $workProjectContents ?>
+          </ul>
+        </div>
 
-          <div class="span4">
-            <h3>Laboratório</h3>
-            <ul class="unstyled">
-              <?php echo $labProjectContents ?>
-            </ul>
-          </div>
+        <div class="span4">
+          <h3>Laboratório</h3>
+          <ul class="unstyled">
+            <?php echo $labProjectContents ?>
+          </ul>
+        </div>
 
-          <div class="span4">
-            <h3>Pessoal</h3>
-            <ul class="unstyled">
-              <?php echo $personalProjectContents ?>
-            </ul>
-          </div>
+        <div class="span4">
+          <h3>Pessoal</h3>
+          <ul class="unstyled">
+            <?php echo $personalProjectContents ?>
+          </ul>
         </div>
       </div>
 
