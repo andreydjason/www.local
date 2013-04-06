@@ -1,54 +1,47 @@
 <?php
-// Work Projects
-$projectsListIgnore = array ('.','..','assets');
 $handle = opendir(".");
-$workProjectContents = '';
+$projectsListIgnore = array ('.','..','assets');
+
+$ul_html = '<ul class="">';
+
+$workProjectContents = $ul_html;
+$labProjectContents = $ul_html;
+$personalProjectContents = $ul_html;
+
 while ($file = readdir($handle)) 
 {
-  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'work_')) 
-  {
+  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'work_') !== false) {
     $workProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('work_', '', $file)).'</a></li>';
   }
-}
-closedir($handle);
-if ($workProjectContents == '') {
-  $workProjectContents = 'Nenhum Projeto de Trabalho encontrado';
-}
-// end Work Projects
 
-// Lab Projects
-$projectsListIgnore = array ('.','..','assets');
-$handle = opendir(".");
-$labProjectContents = '';
-while ($file = readdir($handle)) 
-{
-  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'lab_')) 
-  {
+  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'lab_') !== false) {
     $labProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('lab_', '', $file)).'</a></li>';
   }
-}
-closedir($handle);
-if ($labProjectContents == '') {
-  $labProjectContents = 'Nenhum Projeto do Laboratório encontrado';
-}
-// end Lab Projects
 
-// Personal Projects
-$projectsListIgnore = array ('.','..','assets');
-$handle = opendir(".");
-$personalProjectContents = '';
-while ($file = readdir($handle)) 
-{
-  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'personal_')) 
-  {
+  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'personal_') !== false) {
     $personalProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('personal_', '', $file)).'</a></li>';
   }
 }
-closedir($handle);
-if ($personalProjectContents == '') {
-  $personalProjectContents = 'Nenhum Projeto Pessoal encontrado';
+
+if ($workProjectContents == $ul_html) {
+  $workProjectContents = 'Nenhum Projeto de Trabalho encontrado';
+} else {
+  $workProjectContents .= '</ul>';
 }
-// end Personal Projects
+
+if ($labProjectContents == $ul_html) {
+  $labProjectContents = 'Nenhum Projeto do Laboratório encontrado';
+} else {
+  $labProjectContents .= '</ul>';
+}
+
+if ($personalProjectContents == $ul_html) {
+  $personalProjectContents = 'Nenhum Projeto Pessoal encontrado';
+} else {
+  $personalProjectContents .= '</ul>';
+}
+
+closedir($handle);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,23 +91,17 @@ if ($personalProjectContents == '') {
       <div class="row">
         <div class="span4">
           <h3>Trabalho</h3>
-          <ul class="unstyled">
-            <?php echo $workProjectContents ?>
-          </ul>
+          <?php echo $workProjectContents ?>
         </div>
 
         <div class="span4">
           <h3>Laboratório</h3>
-          <ul class="unstyled">
-            <?php echo $labProjectContents ?>
-          </ul>
+          <?php echo $labProjectContents ?>
         </div>
 
         <div class="span4">
           <h3>Pessoal</h3>
-          <ul class="unstyled">
-            <?php echo $personalProjectContents ?>
-          </ul>
+          <?php echo $personalProjectContents ?>
         </div>
       </div>
 
