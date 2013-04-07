@@ -10,16 +10,18 @@ $personalProjectContents = $ul_html;
 
 while ($file = readdir($handle)) 
 {
-  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'work_') !== false) {
-    $workProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('work_', '', $file)).'</a></li>';
-  }
+  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'sublime-') === false) {
+    if (strpos($file, 'work_') !== false) {
+      $workProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('work_', '', $file)).'</a></li>';
+    }
 
-  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'lab_') !== false) {
-    $labProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('lab_', '', $file)).'</a></li>';
-  }
+    if (strpos($file, 'lab_') !== false) {
+      $labProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('lab_', '', $file)).'</a></li>';
+    }
 
-  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'personal_') !== false) {
-    $personalProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('personal_', '', $file)).'</a></li>';
+    if (strpos($file, 'personal_') !== false) {
+      $personalProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('personal_', '', $file)).'</a></li>';
+    }
   }
 }
 
@@ -95,13 +97,13 @@ closedir($handle);
         </div>
 
         <div class="span4">
-          <h3>Laboratório</h3>
-          <?php echo $labProjectContents ?>
+          <h3>Pessoal</h3>
+          <?php echo $personalProjectContents ?>
         </div>
 
         <div class="span4">
-          <h3>Pessoal</h3>
-          <?php echo $personalProjectContents ?>
+          <h3>Laboratório</h3>
+          <?php echo $labProjectContents ?>
         </div>
       </div>
 
