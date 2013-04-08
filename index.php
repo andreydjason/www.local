@@ -1,4 +1,21 @@
 <?php
+// MAINTENANCE
+define('MAINTENANCE', TRUE);
+define('MAINTENANCE_ADMIN', TRUE);
+
+if (MAINTENANCE === TRUE) {
+  if (MAINTENANCE_ADMIN === TRUE) {
+    require('maintenance.php');
+    die();
+  }
+
+  if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
+    require('maintenance.php');
+    die();
+  }
+}
+
+////////////////////////////////////////////////////////////
 $handle = opendir(".");
 $projectsListIgnore = array ('.','..','assets');
 
