@@ -1,7 +1,7 @@
 <?php
 // MAINTENANCE
-define('MAINTENANCE', TRUE);
-define('MAINTENANCE_ADMIN', TRUE);
+define('MAINTENANCE', FALSE);
+define('MAINTENANCE_ADMIN', FALSE);
 
 if (MAINTENANCE === TRUE) {
   if (MAINTENANCE_ADMIN === TRUE) {
@@ -27,7 +27,7 @@ $personalProjectContents = $ul_html;
 
 while ($file = readdir($handle)) 
 {
-  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'sublime-') === false) {
+  if (is_dir($file) && !in_array($file,$projectsListIgnore) && strpos($file, 'sublime-') === false && strpos($file, 'meteor') === false) {
     if (strpos($file, 'work_') !== false) {
       $workProjectContents .= '<li><a href="'.$file.'">'.ucwords(str_replace('work_', '', $file)).'</a></li>';
     }
