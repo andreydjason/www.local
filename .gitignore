@@ -3,6 +3,7 @@
 /lab_*
 /personal_*
 /tmp
+*old*
 *.sublime-*
 
 # Logs and databases #
