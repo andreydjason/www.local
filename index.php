@@ -17,7 +17,7 @@ if (MAINTENANCE === TRUE) {
 
 ////////////////////////////////////////////////////////////
 $handle = opendir(".");
-$projectsListIgnore = array ('.','..','assets');
+$projectsListIgnore = array ('.','..','www_assets');
 
 $ul_html = '<ul class="">';
 
@@ -73,21 +73,21 @@ closedir($handle);
     <meta name="description" content="WWW.LOCAL">
     <meta name="author" content="Andrey D. Viana">
 
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/assets/css/website-base.css" rel="stylesheet">
+    <link href="/www_assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/www_assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/www_assets/css/website-base.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="/assets/js/html5shiv.js"></script>
+      <script src="/www_assets/js/html5shiv.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="/assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/www_assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/www_assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/www_assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="/www_assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="/www_assets/ico/favicon.png">
   </head>
 
   <body>
@@ -152,12 +152,12 @@ closedir($handle);
 
     </div><!-- /container -->
 
-    <script src="/assets/js/jquery-1.9.1.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/consolelog.js"></script>
-    <script src="/assets/js/consolelog.detailprint.js"></script>
-    <script src="/assets/js/website-plugins.js"></script>
-    <script src="/assets/js/website-base.js"></script>
+    <script src="/www_assets/js/jquery-1.9.1.min.js"></script>
+    <script src="/www_assets/js/bootstrap.min.js"></script>
+    <script src="/www_assets/js/consolelog.js"></script>
+    <script src="/www_assets/js/consolelog.detailprint.js"></script>
+    <script src="/www_assets/js/website-plugins.js"></script>
+    <script src="/www_assets/js/website-base.js"></script>
 
   </body>
 </html>
